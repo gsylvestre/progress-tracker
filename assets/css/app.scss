@@ -1,22 +1,12 @@
+html, body {
+    height: 100%;
+}
+
 body {
     background-color: #FFF;
     font-family: 'Raleway', sans-serif;
     padding: 0;
-}
-
-body::after {
-    background-image: url("../img/symfony-logo.png");
-    background-attachment: fixed;
-    background-position: center center;
-    background-repeat: no-repeat;
-    content: "";
-    opacity: 0.2;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
+    background: url("../img/pattern.png");
 }
 
 a {
@@ -103,4 +93,15 @@ header {
 form label, form button {
     display: block;
     margin-top: 5px;
+}
+
+#limit-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 200px;
+    width: 2px;
+    height: 100vh;
+    background-color: #718C00;
+    opacity: 0.2;
 }
