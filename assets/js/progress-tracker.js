@@ -8,7 +8,6 @@ const tracker = {
 
     updateTasksList: () => {
         axios.get('/api/tasks').then(response => {
-            console.log(response);
             trackerContentEl.innerHTML = response.data;
             tracker.listenForClick();
             window.setTimeout(tracker.updateTasksList, 30000);
@@ -17,14 +16,12 @@ const tracker = {
 
     listenForClick: () => {
         let allMarkers = document.querySelectorAll(".current-user .task-step");
-        console.log(allMarkers);
         allMarkers.forEach(marker => {
             marker.addEventListener("click", tracker.markerClicked);
         });
     },
 
     markerClicked: (e) => {
-        console.log("click");
         let clickedMarker = e.currentTarget;
         let taskId = clickedMarker.dataset.taskId;
         axios.post('/api/tasks/setLastDoneTask', {

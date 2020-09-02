@@ -12,4 +12,3 @@ import '../css/app.scss';
 // import $ from 'jquery';
 const progressTracker = require('./progress-tracker');
 progressTracker.init();
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
