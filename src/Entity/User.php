@@ -36,6 +36,16 @@ class User implements UserInterface
      */
     private $password;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Task::class)
+     */
+    private $lastDoneTask;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $lastUpdate;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -107,5 +117,29 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function getLastDoneTask(): ?Task
+    {
+        return $this->lastDoneTask;
+    }
+
+    public function setLastDoneTask(?Task $lastDoneTask): self
+    {
+        $this->lastDoneTask = $lastDoneTask;
+
+        return $this;
+    }
+
+    public function getLastUpdate(): ?\DateTimeInterface
+    {
+        return $this->lastUpdate;
+    }
+
+    public function setLastUpdate(\DateTimeInterface $lastUpdate): self
+    {
+        $this->lastUpdate = $lastUpdate;
+
+        return $this;
     }
 }

@@ -20,6 +20,7 @@ class MainController extends AbstractController
 
         ]);
     }
+
     /**
      * @Route("/app", name="app")
      */
@@ -29,5 +30,6 @@ class MainController extends AbstractController
 
         ]);
     }
+
 
 }

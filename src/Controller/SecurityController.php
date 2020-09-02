@@ -37,6 +37,7 @@ class SecurityController extends AbstractController
                 )
             );
 
+            $user->setLastUpdate(new \DateTime());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();

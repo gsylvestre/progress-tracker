@@ -1,0 +1,10 @@
+$base-color: #c6538c;
+@import "node_modules/progress-tracker/src/styles/progress-tracker.scss";
+
+body {
+    background-color: $base-color;
+}
+
+.progress-tracker {
+    margin: 10px 0;
+}
