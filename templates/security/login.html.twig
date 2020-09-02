@@ -14,7 +14,7 @@
         <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" required autofocus>
     </div>
     <div>
-        <label for="inputPassword">Password</label>
+        <label for="inputPassword">Mot de passe</label>
         <input type="password" name="password" id="inputPassword" class="form-control" required>
     </div>
     <input type="hidden" name="_csrf_token"
@@ -25,4 +25,6 @@
         Connexion
     </button>
 </form>
+
+    <p>Pas encore de compte ? <a href="{{ path('app_register') }}">Créez-en un !</a></p>
 {% endblock %}

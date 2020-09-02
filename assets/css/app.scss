@@ -2,7 +2,6 @@ body {
     background-color: #FFF;
     font-family: 'Raleway', sans-serif;
     padding: 0;
-
 }
 
 body::after {
@@ -18,6 +17,15 @@ body::after {
     right: 0;
     position: absolute;
     z-index: -1;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav a {
+    padding: 10px;
+    display: block;
 }
 
 .container {
@@ -90,4 +98,9 @@ header {
         background-color: #FFF;
     }
 
+}
+
+form label, form button {
+    display: block;
+    margin-top: 5px;
 }
