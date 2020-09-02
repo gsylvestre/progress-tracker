@@ -1,13 +1,12 @@
+{% set user = app.user %}
+<div class="current-user user-line">
+    {% include('api/task.inc.html.twig') %}
+</div>
+
 {% for user in users %}
-    <div class="user-line">
-        <div class="username">{{ user.username }}</div>
-        <ul class="progress-tracker">
-            {% for task in tasks %}
-            <li class="progress-step {{ user.lastDoneTask is not null and user.lastDoneTask.sort > task.sort ? 'is-complete' : '' }}">
-                <div class="progress-marker"></div>
-                <div class="progress-text">{{ task.name }}</div>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
+    {% if user != app.user %}
+        <div class="user-line">
+            {% include('api/task.inc.html.twig') %}
+        </div>
+    {% endif %}
 {% endfor %}

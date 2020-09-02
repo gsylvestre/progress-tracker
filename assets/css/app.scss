@@ -1,10 +1,93 @@
-$base-color: #c6538c;
-@import "node_modules/progress-tracker/src/styles/progress-tracker.scss";
-
 body {
-    background-color: $base-color;
+    background-color: #FFF;
+    font-family: 'Raleway', sans-serif;
+    padding: 0;
+
 }
 
-.progress-tracker {
-    margin: 10px 0;
+body::after {
+    background-image: url("../img/symfony-logo.png");
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    content: "";
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.container {
+    padding: 5px 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    h1 {
+        font-size: 1.2rem;
+        font-weight: normal;
+        margin: 0 0 8px 0;
+    }
+}
+
+.user-line {
+    margin-top: 30px;
+
+    .username {
+        margin-bottom: 4px;
+    }
+}
+
+.task-progress {
+    font-size: 0.8rem;
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    background-color: #FFF;
+
+    .tasks-container {
+        display: flex;
+    }
+
+    .task-step {
+        padding: 4px 8px;
+        cursor: pointer;
+        flex: 1 1 0px;
+        box-sizing: border-box;
+        text-align: center;
+        border-bottom: 1px solid #DDD;
+        margin: 0 1px;
+    }
+
+    .task-step:hover,
+    .task-step.is-complete:hover {
+        background-color: #5eb5e0;
+    }
+
+    .task-step.is-complete {
+        background-color: #718C00;
+        color: #FFF;
+    }
+
+    .module-number {
+        padding: 4px 8px;
+        text-align: center;
+    }
+
+    .module-container {
+        flex: 1 1 0px;
+        margin-right: 3px;
+    }
+
+    .module-container:nth-child(odd) {
+        background-color: #FFF;
+    }
+
 }

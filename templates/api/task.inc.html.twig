@@ -1,0 +1,13 @@
+<div class="username">{{ user.username }}</div>
+<ul class="task-progress">
+    {% for moduleNumber, module in tasks %}
+        <li class="module-container">
+            <div class="tasks-container">
+                {% for task in module %}
+                    <div title="{{ task.description }}" class="task-step {{ user.lastDoneTask is not null and user.lastDoneTask.sort >= task.sort ? 'is-complete' : '' }}" data-task-id="{{ task.id }}">{{ task.name }}</div>
+                {% endfor %}
+            </div>
+            <div class="module-number">Module&nbsp;{{ moduleNumber }}</div>
+        </li>
+    {% endfor %}
+</ul>

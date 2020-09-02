@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HCDA1909 progress tracker</title>
     {% block stylesheets %}
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap" rel="stylesheet">
         {# 'app' must match the first argument to addEntry() in webpack.config.js #}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
@@ -14,6 +15,12 @@
     <div class="container">
         <header>
             <h1>HCDA1909 progress tracker</h1>
+            <nav>
+                {% if app.user %}
+                    <a href="{{ path('app_logout') }}">Déconnexion</a>
+                {% else %}
+                {% endif %}
+            </nav>
         </header>
         <main>
             {% block body %}{% endblock %}

@@ -32,6 +32,11 @@ class Task
      */
     private $sort;
 
+    /**
+     * @ORM\Column(type="string", length=30, nullable=true)
+     */
+    private $module;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +74,18 @@ class Task
     public function setSort(int $sort): self
     {
         $this->sort = $sort;
+
+        return $this;
+    }
+
+    public function getModule(): ?string
+    {
+        return $this->module;
+    }
+
+    public function setModule(?string $module): self
+    {
+        $this->module = $module;
 
         return $this;
     }
