@@ -8,11 +8,20 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
+ * @ORM\HasLifecycleCallbacks()
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @UniqueEntity(fields={"username"}, message="There is already an account with this username")
  */
 class User implements UserInterface
 {
+    /**
+     * @ORM\PreUpdate()
+     */
+    public function beforeUpdate()
+    {
+        $this->setLastUpdate(new \DateTime());
+    }
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue

@@ -1,4 +1,4 @@
-<div class="username">{{ user.username }}</div>
+<div class="username">{{ user.username }} <small>màj le {{ user.lastUpdate|date("d-m à h:i") }}</small></div>
 <ul class="task-progress">
     {% for moduleNumber, module in tasks %}
         <li class="module-container">
